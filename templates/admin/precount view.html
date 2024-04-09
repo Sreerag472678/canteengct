@@ -1,0 +1,28 @@
+{% extends 'admin/admin home template.html' %}
+{% block body %}
+
+<table class="table table-bordered">
+  <tr>
+    <th>sl/no</th>
+    <th>date</th>
+    <th>time</th>
+    <th>username</th>
+    <th>type</th>
+    <th>todaysmenu</th>
+    <th>Status</th>
+  </tr>
+     {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+    <td>{{ i.Date }}&nbsp;</td>
+    <td>{{ i.Time }}&nbsp;</td>
+      <td>{{ i.USER.Username }}&nbsp;</td>
+      <td>{{ i.Type }}&nbsp;</td>
+      <td>{{ i.TODAYMENU.FOOD.Foodname }}&nbsp;</td>
+      <td>{{ i.Status }}&nbsp;</td>
+  </tr>
+     {% endfor %}
+</table>
+
+{% endblock %}
+

@@ -1,0 +1,44 @@
+{% extends 'admin/admin home template.html' %}
+{% block body %}
+
+<form action="/myapp/orderhistoryviews_post/" method="POST"><table width="200" border="1">
+    {% csrf_token %}
+  <tr>
+    <td>from</td>
+    <td>
+      <input type="date" name="search1" class="form-control" id="textfield" /></td>
+    <td>to</td>
+    <td>
+      <input type="date" name="search2" class="form-control" id="textfield2" /></td>
+    <td><input type="submit" name="button2" id="button2" class="btn btn-success" value="search" /></td>
+  </tr>
+</table>
+</form>
+<br><br>
+<table class="table table-bordered">
+  <tr>
+    <th>sl/no</th>
+    <th>date</th>
+    <th>time</th>
+    <th>username</th>
+    <th>type</th>
+    <th>payment status</th>
+    <th>amount</th>
+      <td></td>
+  </tr>
+
+    {% for i in data %}
+  <tr>
+    <td>{{ forloop.counter }} </td>
+    <td>{{ i.Date}}</td>
+    <td>{{ i.Time }}&nbsp;</td>
+    <td>{{ i.USER.Username }}</td>
+           <td>{{ i.Type }} </td>
+    <td>{{ i.Status }}</td>
+    <td>{{ i.Amount }}</td>
+  <td><a href="/myapp/viewordermore/{{ i.id }}">more</a></td>
+  </tr>
+ {% endfor %}
+</table>
+
+{% endblock %}

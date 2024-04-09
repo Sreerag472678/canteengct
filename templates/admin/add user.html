@@ -1,0 +1,116 @@
+{% extends 'admin/admin home template.html' %}
+{% block body %}
+
+
+
+
+<form action="/myapp/addusers_post/" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<table class="table table-bordered">
+  <tr>
+    <th scope="row">username</th>
+    <td><label for="textfield"></label>
+      <input type="text" class="form-control" name="username" id="textfield" /></td>
+  </tr>
+  <tr>
+    <th scope="row">department</th>
+    <td><label for="select"></label>
+      <select name="department" id="select">
+        <option>bca</option>
+        <option>bba</option>
+        <option>bcom</option>
+      </select></td>
+  </tr>
+  <tr>
+    <th scope="row">year</th>
+    <td><label for="select2"></label>
+      <select name="year" id="select2">
+        <option>2021</option>
+        <option>2022</option>
+        <option>2023</option>
+      </select></td>
+  </tr>
+  <tr>
+    <th scope="row">gender</th>
+    <td><input type="radio" name="gender" class="form-control" id="radio" value="male" />
+      <label for="radio"> male</label><br />
+      <input type="radio" name="gender" class="form-control" id="radio" value="male" />
+      <label for="radio"> female</label><br />
+      <input type="radio" name="gender" class="form-control" id="radio" value="male" />
+      <label for="radio"> others</label>
+  </tr>
+  
+  <tr>
+    <th scope="row">dob</th>
+    <td><label for="textfield2"></label>
+      <input type="date" class="form-control" name="dob" id="textfield2" /></td>
+  </tr>
+  <tr>
+    <th scope="row">phone</th>
+    <td><label for="textfield3"></label>
+      <input type="text" class="form-control" name="phone" id="textfield3" /></td>
+  </tr>
+  <tr>
+    <th scope="row">email</th>
+    <td><label for="textfield4"></label>
+      <input type="email" name="email" id="textfield4" /></td>
+  </tr>
+  <tr>
+    <th scope="row">register no</th>
+    <td><label for="textfield5"></label>
+      <input type="text" class="form-control" name="register" id="textfield5" /></td>
+  </tr>
+  <tr>
+    <th scope="row">addmission no</th>
+    <td><label for="textfield6"></label>
+      <input type="text" class="form-control" name="admission" id="textfield6" /></td>
+  </tr>
+  <tr>
+    <th scope="row">place</th>
+    <td><label for="textfield7"></label>
+      <input type="text"class="form-control" name="place" id="textfield7" /></td>
+  </tr>
+  <tr>
+    <th scope="row">post</th>
+    <td><label for="textfield8"></label>
+      <input type="text" class="form-control" name="post" id="textfield8" /></td>
+  </tr>
+  <tr>
+    <th scope="row">pin</th>
+    <td><label for="textfield9"></label>
+      <input type="text" class="form-control" name="pin" id="textfield9" /></td>
+  </tr>
+  <tr>
+    <th scope="row">district</th>
+    <td><label for="select3"></label>
+      <select name="district" id="select3">
+        <option>malappuram</option>
+        <option>palakkad</option>
+        <option>kottayam</option>
+        <option>trissur</option>
+      </select></td>
+  </tr>
+  <tr>
+    <th scope="row">state</th>
+    <td><input type="text" name="state" class="form-control" readonly="readonly" value="kerala" id="textfield12" /></td>
+  </tr>
+  <tr>
+    <th scope="row">id proof</th>
+    <td><label for="fileField"></label>
+      <input type="file" class="form-control" name="proof" id="fileField" /></td>
+  </tr>
+  <tr>
+    <th scope="row">photo</th>
+    <td><label for="fileField2"></label>
+      <input type="file" class="form-control" name="photo" id="fileField2" /></td>
+  </tr>
+  <tr>
+    <th colspan="2" scope="row"><input type="submit" class="btn-success name="button" id="button" value="Submit" /></th>
+    </tr>
+</table>
+
+</form>
+
+{% endblock %}
+
+

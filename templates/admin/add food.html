@@ -1,0 +1,47 @@
+{% extends 'admin/admin home template.html' %}
+{% block body %}
+
+<form action="/myapp/addfood_post/#abc" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<table class="table table-bordered">
+  <tr>
+    <th >food name</th>
+    <td>
+      <input type="text" name="name" class="form-control" id="textfield" /></td>
+  </tr>
+  <tr>
+    <th scope="row">type</th>
+    <td>
+        <select name="radio" class="form-control" required>
+            <option value="Veg">Veg</option>
+            <option value="Veg">NonVeg</option>
+            <option value="Veg">CoolDrinks</option>
+            <option value="Veg">Coffee</option>
+            <option value="Veg">Chocolates</option>
+        </select>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">Description</th>
+    <td>
+      <textarea name="discription" id="textarea"  class="form-control" cols="45" rows="5"></textarea></td>
+  </tr>
+  <tr>
+    <th scope="row">image</th>
+    <td><label for="fileField"></label>
+      <input type="file" name="image" class=" form-control" id="fileField" /></td>
+  </tr>
+  <tr>
+    <th scope="row">price</th>
+    <td><label for="textfield2"></label>
+      <input type="text" name="price"  class="form-control" id="textfield2" /></td>
+  </tr>
+  <tr>
+    <th colspan="2" scope="row"><input type="submit" name="button" class="btn btn-success" id="button" value="Submit" /></th>
+    </tr>
+ 
+</table>
+
+
+</form>
+{% endblock %}

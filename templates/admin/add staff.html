@@ -1,0 +1,97 @@
+{% extends 'admin/admin home template.html' %}
+{% block body %}
+<form action="/myapp/addstaff_post/" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<table class="table table-bordered">
+ 
+  <tr>
+    <th scope="row">name</th>
+    <td><label for="textfield3"></label>
+      <input type="text" name="name" id="textfield3" /></td>
+  </tr>
+  <tr>
+    <th scope="row">dob</th>
+    <td><label for="textfield4"></label>
+      <input type="date" name="date" id="textfield4" /></td>
+  </tr>
+  <tr>
+    <th scope="row">gender</th>
+    <td><input type="radio" name="textfield" id="radio2" value="male" />
+      <label for="radio"></label> 
+      male <br />
+      <input type="radio" name="textfield" id="radio3" value="femsle" />
+      <label for="radio"></label> female <br />
+      <input type="radio" name="textfield" id="radio" value="other" />
+      <label for="radio"></label>other </td>
+  </tr>
+  <tr>
+    <th scope="row">phone </th>
+    <td><label for="textfield5"></label>
+      <input type="text" name="phone" id="textfield5" /></td>
+  </tr>
+  <tr>
+    <th scope="row">email</th>
+    <td><label for="textfield6"></label>
+      <input type="email" name="email" id="textfield6" /></td>
+  </tr>
+  <tr>
+    <th scope="row">house name</th>
+    <td><label for="textfield7"></label>
+      <input type="text" name="house" id="textfield7" /></td>
+  </tr>
+  <tr>
+    <th scope="row">place</th>
+    <td><label for="textfield8"></label>
+      <input type="text" name="place" id="textfield8" /></td>
+  </tr>
+  <tr>
+    <th scope="row">post</th>
+    <td><label for="textfield10"></label>
+      <input type="text" name="post" id="textfield10" /></td>
+  </tr>
+  <tr>
+    <th scope="row">pin</th>
+    <td><label for="textfield11"></label>
+      <input type="text" name="pin" id="textfield11" /></td>
+  </tr>
+  <tr>
+    <th scope="row">district</th>
+    <td><label for="select"></label>
+      <select name="district" id="select">
+        <option>thiruvanthapuram </option>
+        <option>kollam </option>
+        <option>pathanamthitta </option>
+        <option>malappuram </option>
+        <option>alapuzha </option>
+        <option>kannur </option>
+        <option>kasargode </option>
+        <option>kozhikode </option>
+        <option>thrissur </option>
+        <option>idukki </option>
+        <option>vayanad </option>
+      </select></td>
+  </tr>
+  <tr>
+    <th scope="row">state</th>
+    <td><label for="textfield12"></label>
+      <input type="text" name="state" readonly="readonly" value="kerala" id="textfield12" /></td>
+  </tr>
+  <tr>
+  
+    <th scope="row">id proof</th>
+    <td><label for="fileField"></label>
+      <input type="file" name="idproof" id="fileField" /></td>
+  </tr>
+  <tr>
+    <th scope="row">photo</th>
+    <td><label for="fileField2"></label>
+      <input type="file" name="photo" id="fileField2" /></td>
+  </tr>
+  <tr>
+    <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Submit" class="btn btn-success"/></th>
+    </tr>
+</table>
+
+
+</form>
+{% endblock %}

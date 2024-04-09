@@ -1,0 +1,50 @@
+{% extends 'admin/admin home template.html' %}
+{% block body %}
+
+<form action="/myapp/editfood_POST/#abc" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<table class="table table-bordered">
+<input type="hidden" name="id1" value="{{ data.id }}">
+  <tr>
+
+    <th >food name</th>
+    <td><label for="textfield"></label>
+      <input type="text" name="name" class="form-control" id="textfield" value="{{ data.Foodname }}"/></td>
+  </tr>
+ <tr>
+    <th scope="row">type</th>
+    <td>
+        <select name="radio" class="form-control" required>
+            <option value="Veg">Veg</option>
+            <option value="Veg">NonVeg</option>
+            <option value="Veg">CoolDrinks</option>
+            <option value="Veg">Coffee</option>
+            <option value="Veg">Chocolates</option>
+        </select>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">discription</th>
+    <td><label for="textarea"></label>
+      <textarea name="discription" id="textarea"  class="form-control" cols="45" rows="5" >{{ data.Discription }}</textarea></td>
+  </tr>
+  <tr>
+    <th scope="row">image</th>
+    <td><label for="fileField"></label>
+      <input type="file" name="image" class=" form-control" id="fileField"  />
+    <img src="{{ data.Image }}"></td>
+  </tr>
+  <tr>
+    <th scope="row">price</th>
+    <td><label for="textfield2"></label>
+      <input type="text" name="price"  class="form-control" id="textfield2"  value="{{ data.Price }}"/></td>
+  </tr>
+  <tr>
+    <th colspan="2" scope="row"><input type="submit" name="button" class="btn btn-success" id="button" value="Submit" /></th>
+    </tr>
+ 
+</table>
+
+
+</form>
+{% endblock %}

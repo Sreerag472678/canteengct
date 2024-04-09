@@ -1,0 +1,30 @@
+{% extends 'admin/admin home template.html' %}
+{% block body %}
+
+<form action="/myapp/admin_sendreply_post/" method="POST">
+    {% csrf_token %}
+<table class="table table-bordered">
+  <tr>
+    <th scope="row" width="180px">Reply</th>
+    <td>
+        <textarea class="form-control" name="reply" id="textfield"  required></textarea></td>
+  </tr>
+
+  <tr>
+      <th></th>
+    <th><input type="submit" class="btn btn-success" name="button" id="button"  value="Submit" /></th>
+    </tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+</form>
+{% endblock %}

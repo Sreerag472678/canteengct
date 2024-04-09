@@ -1,0 +1,66 @@
+{% extends 'admin/admin home template.html' %}
+{% block body %}
+
+<form action="/myapp/usersview_post/"  method="POST">
+    {% csrf_token %}
+<table class="table table-bordered">
+  <tr>
+    <th scope="row">search</th>
+    <td><label for="textfield"></label>
+      <input type="text" name="search1" id="textfield" /></td>
+      <th><input type="submit" name="button" id="button"  class="btn btn-success"  value="search" /></th>
+  </tr>
+</table>
+
+<table class="table table-bordered">
+  <tr>
+    <th width="31" scope="row">sl/no</th>
+    <td width="4">username</td>
+    <td width="4">department</td>
+    <td width="4">year</td>
+    <td width="4">gender</td>
+    <td width="4">dob</td>
+    <td width="4">phone</td>
+    <td width="4">email</td>
+    <td width="4">register no</td>
+    <td width="4">addmission no </td>
+    <td width="4">place</td>
+    <td width="4">post</td>
+    <td width="4">pin</td>
+    <td width="4">district</td>
+    <td width="4">state</td>
+    <td width="4">id proof</td>
+    <td width="8">photo</td>
+     
+      
+  </tr>
+    {% for i in data %}
+  <tr>
+    <th scope="row">&nbsp;{{ forloop.counter }}</th>
+    <td>&nbsp;{{ i.Username }}</td>
+    <td>{{ i.Department }}&nbsp;</td>
+    <td>&nbsp;{{ i.Year }}</td>
+    <td>{{ i.Gender  }}&nbsp;</td>
+    <td>{{ i.Dob }}&nbsp;</td>
+    <td>&nbsp;{{ i.Phone }}</td>
+    <td>{{ i.Email }}&nbsp;</td>
+    <td>{{i.Registerno  }}&nbsp;</td>
+    <td>&nbsp;{{ i.Addmissionno }}</td>
+    <td>&nbsp;{{ i.Place  }}</td>
+    <td>&nbsp;{{ i.Post }}</td>
+    <td>&nbsp;{{ i.Pin }}</td>
+    <td>&nbsp;{{ i.District }}</td>
+    <td>&nbsp;{{ i.State  }}</td>
+     <td>&nbsp;<img src="{{ i.Idproof }}" height="150px" width="100px"></td>
+    <td><img src="{{ i.Photo }}" height="150px" width="100px">&nbsp;</td>
+
+     <td><a  class="btn btn-danger" href="/myapp/block/{{ i.LOGIN.id }}">BLOCK</a> </td>
+
+    
+  </tr>
+    {% endfor %}
+</table>
+
+</form>
+
+{% endblock %}

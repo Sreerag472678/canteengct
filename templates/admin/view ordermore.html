@@ -1,0 +1,46 @@
+{% extends 'admin/admin home template.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="/myapp/orderhistoryviews_post/" method="POST"><table width="200" border="1">
+    {% csrf_token %}
+{#  <tr>#}
+{#    <td>from</td>#}
+{#    <td><label for="textfield"></label>#}
+{#      <input type="text" name="search1" class="form-control" id="textfield" /></td>#}
+{#    <td><input type="submit" name="button" class="form-control" id="button" value="search" /></td>#}
+{#    <td>to</td>#}
+{#    <td><label for="textfield2"></label>#}
+{#      <input type="text" name="search2" class="form-control" id="textfield2" /></td>#}
+{#    <td><input type="submit" name="button2" class="btn-success" id="button2" value="search" /></td>#}
+{#  </tr>#}
+</table>
+</form>
+<br><br>
+<table class="table table-bordered">
+  <tr>
+    <th>sl/no</th>
+    <th>today menu</th>
+    <th>quantity</th>
+      <td></td>
+  </tr>
+
+    {% for i in data %}
+  <tr>
+    <td>{{ forloop.counter }} </td>
+    <td>{{ i.FOOD.Foodname}}</td>
+    <td>{{ i.Quantity }}&nbsp;</td>
+
+  </tr>
+ {% endfor %}
+</table>
+{% endblock %}
+</body>
+</html>
